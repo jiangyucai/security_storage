@@ -1,0 +1,30 @@
+一、解密说明
+解密命令：args[0]=InputPath  args[1]=keyFilePath  args[2]= regsFile  args[3]= outToPath
+hadoop jar MRdataProcessDecryptdataDesApplication.jar   args[0]  args[1]  args[2]  args[3]
+二、 解密说明
+解密命令：args[0]=InputPath    args[1]=keyFilePath  args[2]= outToPath
+hadoop jar MRdataProcessEncryptApplication.jar args[0]=InputPath   args[1]=keyFilePath  args[2]= outToPath 
+解密和脱敏
+/Users/jiangyc/Applications/hadoop-2.6.2/bin/hadoop jar /Users/jiangyc/Downloads/POC_test/MRdataProcessDecryptdataDesApplication.jar /data/part-m-00181.gz /data/keysFile.properties /data/desensitization.properties /out/out3
+加密
+/Users/jiangyc/Applications/hadoop-2.6.2/bin/hadoop jar /Users/jiangyc/Downloads/POC_test/MRdataProcessEncryptApplication.jar  /out/out7/  /data/keysFile.properties /out/out8/
+
+FTP 正则
+part-m-00003.gz   \S{0,}-0000[0-3]+\S{0,}    			0-3
+part-m-00011.gz   \S{0,}-000[0-1]\d(?<!0[0-3]|1[2-9])+\S{0,}    4-11 
+part-m-00024.gz   \S{0,}-000[1-2]\d(?<!1[0-1]|2[5-9])+\S{0,}    12-24
+part-m-00038.gz   \S{0,}-000[2-3]\d(?<!2[0-4]|3[9])+\S{0,}      25-38
+part-m-00052.gz   \S{0,}-000[3-5]\d(?<!3[0-8]|5[3-9])+\S{0,}    39-52
+part-m-00066.gz   \S{0,}-000[5-6]\d(?<!5[0-2]|6[7-9])+\S{0,}    53-66
+part-m-00081.gz   \S{0,}-000[6-8]\d(?<!6[0-6]|8[2-9])+\S{0,}    67-81
+part-m-00547.gz   \S{0,}-000[8-9]\d(?<!8[0-1])+\S{0,}           82-99
+                  \S{0,}-00[1-9]\d\d+\S{0,}                    100-
+
+
+
+
+
+
+
+
+
